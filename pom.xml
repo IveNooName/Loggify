@@ -12,20 +12,45 @@
     <name>Loggify</name>
     <description>Lightweight colored logging library</description>
 
-    <distributionManagement>
-        <repository>
-            <id>github</id>
-            <name>GitHub IveNooName Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/IveNooName/Loggify</url>
-        </repository>
-    </distributionManagement>
+    <properties>
+        <!-- Wichtig für JitPack: Encoding und Java Version festlegen -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>24</maven.compiler.source>
+        <maven.compiler.target>24</maven.compiler.target>
+    </properties>
 
-    <!-- Normale Dependency -->
     <dependencies>
-        <dependency>
-            <groupId>com.github.IveNooName</groupId>
-            <artifactId>Loggify</artifactId>
-            <version>v1.0</version>
-        </dependency>
+        <!-- Hier kommen deine Abhängigkeiten rein, falls du welche hast -->
     </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Maven Compiler Plugin explizit konfigurieren -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+            <!-- Optional: Quellen (Source Code) mit in das JAR packen -->
+            <!-- Das ist sehr hilfreich für Nutzer deiner Library -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.3.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
