@@ -12,20 +12,20 @@
     <name>Loggify</name>
     <description>Lightweight colored logging library</description>
 
-    <!-- Jitpack Repository -->
-    <repositories>
+    <distributionManagement>
         <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
+            <id>github</id>
+            <name>GitHub IveNooName Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/IveNooName/Loggify</url>
         </repository>
-    </repositories>
+    </distributionManagement>
 
     <!-- Normale Dependency -->
     <dependencies>
         <dependency>
             <groupId>com.github.IveNooName</groupId>
             <artifactId>Loggify</artifactId>
-            <version>Initial_Release</version>
+            <version>v1.0</version>
         </dependency>
     </dependencies>
 </project>
